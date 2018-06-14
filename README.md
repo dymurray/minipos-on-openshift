@@ -79,3 +79,4 @@ There are a few known issues with my deployment of MiniPoS. Right now the email 
 * https://hub.docker.com/r/dymurray/minipos-apb/
 * https://hub.docker.com/r/dymurray/minipos/
 * https://github.com/automationbroker/sbcli
+* https://github.com/openshift/origin/releases
