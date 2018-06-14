@@ -1,0 +1,1 @@
+# minipos-on-openshift
