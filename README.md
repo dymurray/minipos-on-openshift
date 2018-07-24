@@ -20,16 +20,16 @@ Create a new project:
 $ oc new-project <project_name>
 ```
 
-# Step 2: Install `sbcli`
-In order to deploy MiniPoS, I recommend using a tool called `sbcli`. `sbcli` is a CLI tool that allows you to deploy Service Bundles/Ansible Playbook Bundles. It is a golang project, so I recommend installing via:
+# Step 2: Install `apb`
+In order to deploy MiniPoS, I recommend using a tool called `apb`. `sbcli` is a CLI tool that allows you to deploy Service Bundles/Ansible Playbook Bundles. It is a golang project, so I recommend installing via:
 ```
-$ go get -u github.com/automationbroker/sbcli
+$ go get -u github.com/automationbroker/apb
 ```
 
-We now need to configure `sbcli` to point to my DockerHub instance. To do this type:
+We now need to configure `apb` to point to my DockerHub instance. To do this type:
 ```
-$ sbcli registry add --name dymurray --org dymurray
-$ sbcli bundle list
+$ apb registry add --name dymurray --org dymurray
+$ apb bundle list
 ..........<snip>..............
  BUNDLE               IMAGE                                          REGISTRY                                                                
  ---------------- -+- ------------------------------------------ -+- --------                                                                
@@ -43,9 +43,9 @@ $ sbcli bundle list
 ```
 
 # Step 3: Provision MiniPoS to OpenShift
-Before the next step, you need to grab your xPub key from your wallet. `sbcli` will prompt you for both the xPub key along with an email address to send invoices to.
+Before the next step, you need to grab your xPub key from your wallet. `apb` will prompt you for both the xPub key along with an email address to send invoices to.
 ```
-$ sbcli bundle provision minipos-apb -p <project_name>
+$ apb bundle provision minipos-apb -p <project_name>
 Plan: default
 Enter value for parameter [xpub], default: [<nil>]: <enter_xpub_key_here>
 Enter value for parameter [email_address], default: [<nil>]: foo@example.com
@@ -78,5 +78,5 @@ There are a few known issues with my deployment of MiniPoS. Right now the email 
 * https://github.com/dymurray/minipos (fork of simon-v project. HUGE thanks to him!)
 * https://hub.docker.com/r/dymurray/minipos-apb/
 * https://hub.docker.com/r/dymurray/minipos/
-* https://github.com/automationbroker/sbcli
+* https://github.com/automationbroker/apb
 * https://github.com/openshift/origin/releases
